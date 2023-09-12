@@ -6,7 +6,7 @@ const moment = require('moment');
 
 app.get('/', (req, res) => {
     res.send("Welcome, visit /api to see the task");
-)};
+});
 
 app.get('/api', (req, res) => {
     const slack_name = req.query.slack_name || env.slack_name || "yukay";
