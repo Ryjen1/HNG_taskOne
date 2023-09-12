@@ -4,7 +4,11 @@ const env = process.env
 const port = env.PORT || 3000;
 const moment = require('moment');
 
-app.get('/endpoint', (req, res) => {
+app.get('/', (req, res) => {
+    res.send("Welcome, visit /api to see the task");
+)};
+
+app.get('/api', (req, res) => {
     const slack_name = req.query.slack_name || env.slack_name || "yukay";
     const track = req.query.track || env.track || "backend";
 
@@ -26,6 +30,7 @@ app.get('/endpoint', (req, res) => {
 
     res.json(response_data);
 });
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
