@@ -11,7 +11,7 @@ app.get('/endpoint', (req, res) => {
     const current_day = moment().format('dddd');
     const utc_time = moment().utc().format('YYYY-MM-DDTHH:mm:ss[Z]');
 
-    const github_file_url = env.github_file_url || 'https://github.com/Ryjen1/HNG_taskOne.git/blob/main/index.js';
+    const github_file_url = env.github_file_url || 'https://github.com/Ryjen1/HNG_taskOne/blob/main/index.js';
     const github_repo_url = env.github_repo_url || 'https://github.com/Ryjen1/HNG_taskOne.git';
 
     const response_data = {
