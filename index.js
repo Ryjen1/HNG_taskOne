@@ -5,8 +5,8 @@ const port = env.PORT || 3000;
 const moment = require('moment');
 
 app.get('/endpoint', (req, res) => {
-    const slack_name = env.slack_name || "Yukay";
-    const track = env.track || "backend";
+    const slack_name = req.query.slack_name || env.slack_name || "yukay";
+    const track = req.query.track || env.track || "backend";
 
     const current_day = moment().format('dddd');
     const utc_time = moment().utc().format('YYYY-MM-DDTHH:mm:ss[Z]');
