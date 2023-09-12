@@ -1,17 +1,18 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const env = process.env
+const port = env.PORT || 3000;
 const moment = require('moment');
 
 app.get('/endpoint', (req, res) => {
-    const slack_name = yukay;
-    const track = backend;
+    const slack_name = env.slack_name || "Yukay";
+    const track = env.track || "backend";
 
     const current_day = moment().format('dddd');
     const utc_time = moment().utc().format('YYYY-MM-DDTHH:mm:ss[Z]');
 
-    const github_file_url = 'https://github.com/Ryjen1/HNG_taskOne.git/blob/main/file_name.ext';
-    const github_repo_url = 'https://github.com/Ryjen1/HNG_taskOne.git';
+    const github_file_url = env.github_file_url || 'https://github.com/Ryjen1/HNG_taskOne.git/blob/main/index.js';
+    const github_repo_url = env.github_repo_url || 'https://github.com/Ryjen1/HNG_taskOne.git';
 
     const response_data = {
         slack_name: slack_name,
